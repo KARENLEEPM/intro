@@ -3,364 +3,480 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karen Lee | Product Leadership Portfolio</title>
+    <title>DATADOG_APM_TRACE: "karen_lee_career_stream"</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome for professional icons -->
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
-body { font-family: 'Outfit', sans-serif; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #070a13;
+        }
+        .font-display {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        /* Custom scrollbar to match datadog style */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0d1222;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #222e4e;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3b4f80;
+        }
+        .active-trace-node {
+            box-shadow: 0 0 15px rgba(124, 92, 255, 0.4);
+            border-color: #7c5cff !important;
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800">
+<body class="text-slate-200 min-h-screen pb-16 antialiased">
 
-    <!-- Header / Hero Section -->
-    <header class="bg-white border-b border-slate-200 py-12 px-6">
-        <div class="max-w-6xl mx-auto text-center md:text-left md:flex md:items-center md:justify-between">
-            <div>
-                <h1 class="text-4xl font-extrabold text-slate-900 tracking-tight">KAREN LEE</h1>
-                <p class="text-xl text-blue-600 font-semibold mt-2">Product and Program Leader</p>
-                <p class="text-slate-500 mt-1"><i class="fa-solid fa-location-dot mr-1"></i> Seattle, WA</p>
+    <!-- Top Navigation Bar -->
+    <nav class="border-b border-slate-800 bg-[#0c101f] px-6 py-3 flex flex-wrap items-center justify-between gap-4 sticky top-0 z-50">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded bg-purple-600 flex items-center justify-center text-white font-bold text-xs shadow-lg shadow-purple-500/20">
+                <i class="fa-solid fa-chart-line"></i>
             </div>
-            <!-- Quick Action Call-to-Actions -->
-            <div class="mt-6 md:mt-0 flex flex-wrap justify-center md:justify-end gap-3">
-                <a href="mailto:LKA527@GMAIL.COM" class="bg-blue-600 text-white px-5 py-2.5 rounded-lg font-medium shadow-sm hover:bg-blue-700 transition duration-200">
-                    <i class="fa-solid fa-envelope mr-2"></i>Email Me
-                </a>
-                <a href="https://linkedin.com/in/karenleepm" target="_blank" class="border border-slate-300 text-slate-700 px-5 py-2.5 rounded-lg font-medium bg-white hover:bg-slate-50 transition duration-200">
-                    <i class="fa-brands fa-linkedin mr-2 text-blue-600"></i>LinkedIn
-                </a>
+            <div class="flex items-center gap-2 text-xs font-mono">
+                <span class="text-purple-400 font-bold">APM</span>
+                <span class="text-slate-600">/</span>
+                <span class="text-slate-400">Traces</span>
+                <span class="text-slate-600">/</span>
+                <span class="text-emerald-400 font-semibold bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800/50">env:production</span>
             </div>
         </div>
-    </header>
-
-    <!-- Professional Summary -->
-    <section class="max-w-6xl mx-auto px-6 pt-12">
-        <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
-            <h2 class="text-2xl font-bold text-slate-900 mb-4">Professional Summary</h2>
-            <p class="text-slate-600 leading-relaxed text-lg">
-                Product leader with 14+ years of experience building commerce platforms end-to-end defining product vision and strategy, prioritizing the highest-impact problems, and partnering with cross-functional teams of engineers, designers, and analysts to ship features that drive measurable revenue and adoption. Proven track record managing products through multiple lifecycle phases, analyzing large-scale, complex data sets to inform decisions, and integrating diverse stakeholder requirements into a single coherent product strategy. Experienced leading and mentoring product teams and communicating strategy with clarity to executive stakeholders. Recently completed Google training in Large Language Models and Responsible AI, and applies AI tools to redesign workflows and improve team efficiency.
-            </p>
-        </div>
-    </section>
-
-    <!-- Interactive "Impact by the Numbers" Showcase -->
-    <section class="max-w-6xl mx-auto px-6 pt-8">
-        <h3 class="text-xs font-bold text-slate-400 tracking-wider uppercase mb-4">Impact by the Numbers</h3>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm text-center">
-                <span class="block text-3xl font-extrabold text-slate-950">$104B</span>
-                <span class="text-xs text-slate-500 font-medium uppercase tracking-wider block mt-1">Sales Operations Scope</span>
+        
+        <!-- System Status Bar -->
+        <div class="flex items-center gap-6 text-xs font-mono text-slate-400">
+            <div class="flex items-center gap-2">
+                <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>System: active_leader_stream</span>
             </div>
-            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm text-center">
-                <span class="block text-3xl font-extrabold text-blue-600">$100M+</span>
-                <span class="text-xs text-slate-500 font-medium uppercase tracking-wider block mt-1">BOPIS Incremental Revenue</span>
-            </div>
-            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm text-center">
-                <span class="block text-3xl font-extrabold text-emerald-600">90%</span>
-                <span class="text-xs text-slate-500 font-medium uppercase tracking-wider block mt-1">Workflow Optimization</span>
-            </div>
-            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm text-center">
-                <span class="block text-3xl font-extrabold text-purple-600">32%</span>
-                <span class="text-xs text-slate-500 font-medium uppercase tracking-wider block mt-1">NPS Growth (6 Wks)</span>
+            <div class="hidden md:flex items-center gap-4 border-l border-slate-800 pl-4">
+                <span><i class="fa-solid fa-location-dot text-slate-500 mr-1.5"></i>Kirkland, WA</span>
+                <span><i class="fa-solid fa-envelope text-slate-500 mr-1.5"></i>LKA527@GMAIL.COM</span>
             </div>
         </div>
-    </section>
+    </nav>
 
-    <!-- Updated Visual Journey Graph Flowchart with PSU PM Spark -->
-    <section class="max-w-6xl mx-auto px-6 pt-12">
-        <h3 class="text-xs font-bold text-slate-400 tracking-wider uppercase mb-6">Visual Career Roadmap</h3>
-        <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-            <div class="flex flex-col lg:flex-row items-stretch justify-between relative gap-8 lg:gap-2">
+    <!-- Main Workspace -->
+    <main class="max-w-7xl mx-auto px-4 md:px-6 mt-6 space-y-6">
+
+        <!-- Trace Hero Panel -->
+        <section class="bg-[#0f1424] border border-slate-800 rounded-lg p-6 shadow-xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-purple-600/5 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="flex flex-col md:flex-row justify-between items-start gap-4 z-10 relative">
+                <div>
+                    <div class="flex items-center gap-3 flex-wrap">
+                        <span class="bg-purple-900/50 text-purple-300 border border-purple-800/60 px-2.5 py-0.5 rounded text-xs font-mono font-medium">Trace ID: PM-KAREN-LEE-14YR</span>
+                        <span class="text-slate-500 text-xs font-mono">Duration: 14.2 years (2011 - 2026)</span>
+                    </div>
+                    <h1 class="text-3xl md:text-4xl font-extrabold text-white mt-3 font-display tracking-tight">KAREN LEE</h1>
+                    <p class="text-slate-400 text-sm md:text-base mt-2 max-w-3xl leading-relaxed">
+                        Product leader specializing in high-throughput enterprise architectures, global commerce, and system modernizations[cite: 2]. End-to-end strategist combining technical architecture with customer-centric UI to drive billions in transactional value[cite: 2].
+                    </p>
+                </div>
                 
-                <!-- Horizontal Connecting Line (Desktop Only) -->
-                <div class="hidden lg:block absolute top-[28px] left-[6%] right-[6%] h-0.5 bg-slate-200 z-0"></div>
-
-                <!-- Node 1: Penn State (PM Spark) -->
-                <div class="flex flex-col items-center text-center relative z-10 w-full lg:w-[15%]">
-                    <div class="w-14 h-14 rounded-full bg-amber-50 border-4 border-amber-300 flex items-center justify-center text-amber-600 font-bold shadow-md animate-pulse">
-                        <i class="fa-solid fa-lightbulb text-lg"></i>
-                    </div>
-                    <h4 class="font-bold text-slate-900 mt-3 text-sm">PM Spark</h4>
-                    <p class="text-xs text-slate-500">Penn State Univ.</p>
-                    <span class="text-[10px] bg-amber-100 text-amber-800 px-2.5 py-0.5 rounded-full mt-1.5 font-semibold">2007 - 2010</span>
-                    <p class="text-[11px] text-slate-500 mt-2 font-medium leading-snug px-1">Where it started: Designing system architectures & securing systems early on</p>
+                <div class="flex items-center gap-2 self-stretch md:self-auto justify-end">
+                    <a href="mailto:LKA527@GMAIL.COM" class="bg-purple-600 hover:bg-purple-700 text-white font-mono text-xs font-semibold px-4 py-2.5 rounded transition flex items-center gap-2 shadow-lg shadow-purple-500/10">
+                        <i class="fa-solid fa-paper-plane"></i> TRIGGER_CONTACT
+                    </a>
+                    <a href="https://linkedin.com/in/karenleepm" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-slate-300 font-mono text-xs px-4 py-2.5 rounded transition border border-slate-700 flex items-center gap-2">
+                        <i class="fa-brands fa-linkedin"></i> CONNECT
+                    </a>
                 </div>
-
-                <!-- Arrow / Connector (Mobile Only) -->
-                <div class="block lg:hidden text-slate-300 text-center"><i class="fa-solid fa-arrow-down"></i></div>
-
-                <!-- Node 2: Core Enterprise -->
-                <div class="flex flex-col items-center text-center relative z-10 w-full lg:w-[17%]">
-                    <div class="w-14 h-14 rounded-full bg-blue-50 border-4 border-blue-200 flex items-center justify-center text-blue-600 font-bold shadow-md">
-                        <i class="fa-solid fa-database text-lg"></i>
-                    </div>
-                    <h4 class="font-bold text-slate-900 mt-3 text-sm">Core Enterprise</h4>
-                    <p class="text-xs text-slate-500">Samsung SEA</p>
-                    <span class="text-[10px] bg-blue-50 text-blue-700 px-2.5 py-0.5 rounded-full mt-1.5 font-semibold">2011 - 2016</span>
-                    <p class="text-[11px] mt-2 font-medium leading-snug px-1 text-slate-600">SAP CS/SD/CRM, Reverse Logistics, Call Center</p>
-                </div>
-
-                <!-- Arrow / Connector (Mobile Only) -->
-                <div class="block lg:hidden text-slate-300 text-center"><i class="fa-solid fa-arrow-down"></i></div>
-
-                <!-- Node 3: Digital Transformation -->
-                <div class="flex flex-col items-center text-center relative z-10 w-full lg:w-[17%]">
-                    <div class="w-14 h-14 rounded-full bg-slate-800 border-4 border-slate-600 flex items-center justify-center text-white font-bold shadow-md">
-                        <i class="fa-solid fa-plane text-lg"></i>
-                    </div>
-                    <h4 class="font-bold text-slate-900 mt-3 text-sm">Global Scale</h4>
-                    <p class="text-xs text-slate-500">American Airlines</p>
-                    <span class="text-[10px] bg-slate-800 text-white px-2.5 py-0.5 rounded-full mt-1.5 font-semibold">2016 - 2019</span>
-                    <p class="text-[11px] mt-2 font-medium leading-snug px-1 text-slate-600">B2B Sales and Marketing, CRM strategy (Salesforce, MS Dynamics CRM), Pricing Simulation (Anaplan)</p>
-                </div>
-
-                <!-- Arrow / Connector (Mobile Only) -->
-                <div class="block lg:hidden text-slate-300 text-center"><i class="fa-solid fa-arrow-down"></i></div>
-
-                <!-- Node 4: Mobile GTM -->
-                <div class="flex flex-col items-center text-center relative z-10 w-full lg:w-[17%]">
-                    <div class="w-14 h-14 rounded-full bg-blue-100 border-4 border-blue-300 flex items-center justify-center text-blue-600 font-bold shadow-md">
-                        <i class="fa-solid fa-mobile-screen-button text-lg"></i>
-                    </div>
-                    <h4 class="font-bold text-slate-900 mt-3 text-sm">Mobile GTM</h4>
-                    <p class="text-xs text-slate-500">Samsung SEA</p>
-                    <span class="text-[10px] bg-blue-100 text-blue-800 px-2.5 py-0.5 rounded-full mt-1.5 font-semibold">2019 - 2021</span>
-                    <p class="text-[11px] mt-2 font-medium leading-snug px-1 text-slate-600">GTM strategy mobile product management</p>
-                </div>
-
-                <!-- Arrow / Connector (Mobile Only) -->
-                <div class="block lg:hidden text-slate-300 text-center"><i class="fa-solid fa-arrow-down"></i></div>
-
-                <!-- Node 5: eCommerce OTC -->
-                <div class="flex flex-col items-center text-center relative z-10 w-full lg:w-[18%]">
-                    <div class="w-14 h-14 rounded-full bg-blue-200 border-4 border-blue-400 flex items-center justify-center text-blue-800 font-bold shadow-md">
-                        <i class="fa-solid fa-cart-shopping text-lg"></i>
-                    </div>
-                    <h4 class="font-bold text-slate-900 mt-3 text-sm">eCommerce OTC</h4>
-                    <p class="text-xs text-slate-500">Samsung SEA</p>
-                    <span class="text-[10px] bg-blue-200 text-blue-900 px-2.5 py-0.5 rounded-full mt-1.5 font-semibold">2021 - 2024</span>
-                    <p class="text-[11px] mt-2 font-medium leading-snug px-1 text-slate-600">North America eCommerce Strategy and Product Management, Order-to-Cash (SAP SD, MM), eCommerce</p>
-                </div>
-
-                <!-- Arrow / Connector (Mobile Only) -->
-                <div class="block lg:hidden text-slate-300 text-center"><i class="fa-solid fa-arrow-down"></i></div>
-
-                <!-- Node 6: Apple -->
-                <div class="flex flex-col items-center text-center relative z-10 w-full lg:w-[18%]">
-                    <div class="w-14 h-14 rounded-full bg-emerald-50 border-4 border-emerald-300 flex items-center justify-center text-emerald-700 font-bold shadow-md">
-                        <i class="fa-brands fa-apple text-xl"></i>
-                    </div>
-                    <h4 class="font-bold text-slate-900 mt-3 text-sm">Worldwide Sales</h4>
-                    <p class="text-xs text-slate-500">Apple Inc.</p>
-                    <span class="text-[10px] bg-emerald-100 text-emerald-800 px-2.5 py-0.5 rounded-full mt-1.5 font-semibold">2025 - Present</span>
-                    <p class="text-[11px] mt-2 font-medium leading-snug px-1 text-slate-600">B2B Channel Sales, B2B.com (eCommerce), Content Management (CMS), and WW SAP modernization</p>
-                </div>
-
             </div>
+
+            <div class="flex flex-wrap items-center gap-2 mt-6 pt-6 border-t border-slate-800/80 font-mono text-xs">
+                <span class="text-slate-500 font-bold uppercase tracking-wider mr-2">Interactive Mode:</span>
+                <span class="text-emerald-400 bg-emerald-950/40 px-2 py-0.5 rounded border border-emerald-800/50 flex items-center gap-1.5">
+                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span> Click any span below to filter telemetry details[cite: 2]
+                </span>
+            </div>
+        </section>
+
+        <!-- Metric Widgets Grid -->
+        <section class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-[#0f1424] border border-slate-800 rounded-lg p-5 flex flex-col justify-between shadow-md">
+                <div class="flex justify-between items-start text-slate-500">
+                    <span class="text-xs font-mono uppercase tracking-wider">SALES OPS SCOPE</span>
+                    <i class="fa-solid fa-network-wired text-sm text-emerald-400"></i>
+                </div>
+                <div class="mt-4">
+                    <span class="text-3xl font-extrabold text-white tracking-tight font-display">$104B</span>
+                    <p class="text-[10px] text-slate-500 font-mono mt-1">Throughput total spanning systems[cite: 2]</p>
+                </div>
+            </div>
+
+            <div class="bg-[#0f1424] border border-slate-800 rounded-lg p-5 flex flex-col justify-between shadow-md">
+                <div class="flex justify-between items-start text-slate-500">
+                    <span class="text-xs font-mono uppercase tracking-wider">BOPIS INC. REVENUE</span>
+                    <i class="fa-solid fa-dollar-sign text-sm text-purple-400"></i>
+                </div>
+                <div class="mt-4">
+                    <span class="text-3xl font-extrabold text-purple-400 tracking-tight font-display">$100M+</span>
+                    <p class="text-[10px] text-slate-500 font-mono mt-1">Incremental pickup-in-store revenue[cite: 2]</p>
+                </div>
+            </div>
+
+            <div class="bg-[#0f1424] border border-slate-800 rounded-lg p-5 flex flex-col justify-between shadow-md">
+                <div class="flex justify-between items-start text-slate-500">
+                    <span class="text-xs font-mono uppercase tracking-wider">WORKFLOW OPTIMIZATION</span>
+                    <i class="fa-solid fa-gauge-high text-sm text-blue-400"></i>
+                </div>
+                <div class="mt-4">
+                    <span class="text-3xl font-extrabold text-blue-400 tracking-tight font-display">90%</span>
+                    <p class="text-[10px] text-slate-500 font-mono mt-1">Delta push process time reduction[cite: 2]</p>
+                </div>
+            </div>
+
+            <div class="bg-[#0f1424] border border-slate-800 rounded-lg p-5 flex flex-col justify-between shadow-md">
+                <div class="flex justify-between items-start text-slate-500">
+                    <span class="text-xs font-mono uppercase tracking-wider">NPS INTENSITY</span>
+                    <i class="fa-solid fa-arrow-trend-up text-sm text-amber-400"></i>
+                </div>
+                <div class="mt-4">
+                    <span class="text-3xl font-extrabold text-amber-400 tracking-tight font-display">+32%</span>
+                    <p class="text-[10px] text-slate-500 font-mono mt-1">Growth scaled inside of 6 weeks[cite: 2]</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Split Panel: Visual Map Left, Interactive Detail Panel Right -->
+        <div class="grid lg:grid-cols-12 gap-6 items-start">
+            
+            <!-- LEFT PANEL: The Interactive Visual Career Roadmap (7 Cols) -->
+            <section class="lg:col-span-7 bg-[#0f1424] border border-slate-800 rounded-lg shadow-xl overflow-hidden">
+                <div class="p-4 border-b border-slate-800 bg-[#0d1222] flex justify-between items-center">
+                    <h3 class="text-xs font-mono font-bold tracking-wider uppercase text-slate-400">
+                        <i class="fa-solid fa-chart-column text-purple-500 mr-2"></i>APM_TRACE_MAP
+                    </h3>
+                    <span class="text-[10px] text-purple-400 font-mono"><i class="fa-solid fa-mouse-pointer mr-1 animate-bounce"></i>CLICK FOR LOGS[cite: 2]</span>
+                </div>
+
+                <div class="p-6 space-y-6">
+                    <!-- Timeline Rules -->
+                    <div class="flex text-[10px] font-mono text-slate-600 border-b border-slate-800/60 pb-2 mb-2">
+                        <div class="w-[10%]">2007 (PSU)</div>
+                        <div class="w-[25%] pl-4">2011 (Core ERP)[cite: 2]</div>
+                        <div class="w-[20%]">2016 (AA)[cite: 2]</div>
+                        <div class="w-[15%]">2019 (Mobile)[cite: 2]</div>
+                        <div class="w-[20%]">2021 (eCommerce)[cite: 2]</div>
+                        <div class="w-[10%] text-right">Present[cite: 2]</div>
+                    </div>
+
+                    <!-- Interactive Bars (Adding custom ID bindings for click actions) -->
+                    <!-- Node 1: PSU -->
+                    <div onclick="selectTrace('psu')" id="bar-psu" class="trace-bar group flex items-center gap-4 cursor-pointer">
+                        <div class="w-1/4 font-mono text-xs text-slate-400 truncate">pm_spark_cradle</div>
+                        <div class="w-3/4">
+                            <div class="w-[25%] h-8 bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/50 rounded flex items-center justify-between px-3 transition-all duration-150 relative">
+                                <span class="text-[10px] font-mono font-bold text-amber-300 truncate">Penn State PM Cradle</span>
+                                <i class="fa-solid fa-chevron-right text-[8px] text-amber-400"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Node 2: Core Enterprise -->
+                    <div onclick="selectTrace('core_ent')" id="bar-core_ent" class="trace-bar group flex items-center gap-4 cursor-pointer">
+                        <div class="w-1/4 font-mono text-xs text-slate-400 truncate">samsung_core_ent</div>
+                        <div class="w-3/4">
+                            <div class="ml-[25%] w-[35%] h-8 bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/50 rounded flex items-center justify-between px-3 transition-all duration-150 relative">
+                                <span class="text-[10px] font-mono font-bold text-blue-300 truncate">Core Enterprise ERP</span>
+                                <i class="fa-solid fa-chevron-right text-[8px] text-blue-400"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Node 3: American Airlines -->
+                    <div onclick="selectTrace('aa')" id="bar-aa" class="trace-bar group flex items-center gap-4 cursor-pointer">
+                        <div class="w-1/4 font-mono text-xs text-slate-400 truncate">aa_global_scale</div>
+                        <div class="w-3/4">
+                            <div class="ml-[60%] w-[20%] h-8 bg-slate-600/30 hover:bg-slate-600/40 border border-slate-500/50 rounded flex items-center justify-between px-3 transition-all duration-150 relative">
+                                <span class="text-[10px] font-mono font-bold text-slate-200 truncate">AA Sales CRM Strategy</span>
+                                <i class="fa-solid fa-chevron-right text-[8px] text-slate-300"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Node 4: Samsung Mobile GTM -->
+                    <div onclick="selectTrace('mobile')" id="bar-mobile" class="trace-bar group flex items-center gap-4 cursor-pointer">
+                        <div class="w-1/4 font-mono text-xs text-slate-400 truncate">samsung_mobile_gtm</div>
+                        <div class="w-3/4">
+                            <div class="ml-[80%] w-[12%] h-8 bg-blue-500/30 hover:bg-blue-500/40 border border-blue-400/50 rounded flex items-center justify-between px-2 transition-all duration-150 relative">
+                                <span class="text-[10px] font-mono font-bold text-blue-300 truncate">Mobile GTM</span>
+                                <i class="fa-solid fa-chevron-right text-[8px] text-blue-400"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Node 5: Samsung eCommerce -->
+                    <div onclick="selectTrace('ecom')" id="bar-ecom" class="trace-bar group flex items-center gap-4 cursor-pointer">
+                        <div class="w-1/4 font-mono text-xs text-slate-400 truncate">samsung_ecom_otc</div>
+                        <div class="w-3/4">
+                            <div class="ml-[85%] w-[12%] h-8 bg-indigo-600/20 hover:bg-indigo-600/30 border border-indigo-500/50 rounded flex items-center justify-between px-2 transition-all duration-150 relative">
+                                <span class="text-[10px] font-mono font-bold text-indigo-300 truncate">eCom OTC</span>
+                                <i class="fa-solid fa-chevron-right text-[8px] text-indigo-400"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Node 6: Apple -->
+                    <div onclick="selectTrace('apple')" id="bar-apple" class="trace-bar group flex items-center gap-4 cursor-pointer">
+                        <div class="w-1/4 font-mono text-xs text-slate-400 truncate">apple_ww_sales</div>
+                        <div class="w-3/4">
+                            <div class="ml-[93%] w-[7%] h-8 bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/50 rounded flex items-center justify-between px-2 transition-all duration-150 relative">
+                                <span class="text-[10px] font-mono font-bold text-emerald-300 truncate">Apple</span>
+                                <i class="fa-solid fa-chevron-right text-[8px] text-emerald-400"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- RIGHT PANEL: Dynamic Span Telemetry (Details Panel) (5 Cols) -->
+            <section class="lg:col-span-5 bg-[#0f1424] border border-slate-800 rounded-lg shadow-xl overflow-hidden min-h-[420px] flex flex-col">
+                <div class="p-4 border-b border-slate-800 bg-[#0d1222] flex justify-between items-center">
+                    <h3 class="text-xs font-mono font-bold tracking-wider uppercase text-slate-400">
+                        <i class="fa-solid fa-terminal text-emerald-400 mr-2"></i>SPAN_METADATA_METRICS[cite: 2]
+                    </h3>
+                    <span id="active-tag" class="text-[9px] font-mono uppercase bg-slate-900 border border-slate-800 text-slate-400 px-2 py-0.5 rounded">No Span Loaded[cite: 2]</span>
+                </div>
+
+                <!-- Live Container injected dynamically via JS -->
+                <div id="telemetry-content" class="p-5 flex-1 flex flex-col justify-center text-center text-slate-500 space-y-3">
+                    <i class="fa-solid fa-diagram-project text-3xl text-slate-700 animate-pulse"></i>
+                    <p class="font-mono text-xs">Waiting for trace execution target...</p>
+                    <p class="text-xs max-w-xs mx-auto">Select any trace bar from the graph interface on the left to pull live metadata logs and performance metrics[cite: 2].</p>
+                </div>
+            </section>
         </div>
-    </section>
 
-    <!-- Categorized Skills Grid -->
-    <section class="max-w-6xl mx-auto px-6 pt-12">
-        <h3 class="text-xs font-bold text-slate-400 tracking-wider uppercase mb-4">Core Competencies</h3>
-        <div class="grid md:grid-cols-3 gap-6">
-            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-                <div class="text-blue-600 mb-3 text-xl"><i class="fa-solid fa-compass"></i></div>
-                <h4 class="font-bold text-slate-900 mb-2">Product & Strategy</h4>
-                <ul class="text-sm text-slate-600 space-y-1.5">
-                    <li>• Product Vision & Strategy</li>
-                    <li>• 0-to-1 Product Development & Launch</li>
-                    <li>• Roadmapping & Executive Communication</li>
-                    <li>• Requirement Gathering (BRD) & Prioritization</li>
-                </ul>
-            </div>
-            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-                <div class="text-emerald-600 mb-3 text-xl"><i class="fa-solid fa-users"></i></div>
-                <h4 class="font-bold text-slate-900 mb-2">Leadership & Execution</h4>
-                <ul class="text-sm text-slate-600 space-y-1.5">
-                    <li>• Cross-Functional Team Leadership</li>
-                    <li>• Data-Driven Decision Making</li>
-                    <li>• Agile & Scrum Methodologies</li>
-                </ul>
-            </div>
-            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-                <div class="text-purple-600 mb-3 text-xl"><i class="fa-solid fa-robot"></i></div>
-                <h4 class="font-bold text-slate-900 mb-2">AI & Modern Workflows</h4>
-                <ul class="text-sm text-slate-600 space-y-1.5">
-                    <li>• AI-Enabled Workflow & Automation</li>
-                    <li>• Responsible AI Practices</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Detailed Chronological Timeline -->
-    <main class="max-w-6xl mx-auto px-6 py-14">
-        <h2 class="text-xs font-bold text-slate-400 tracking-wider uppercase mb-10">Chronological Timeline</h2>
-
-        <div class="relative border-l-2 border-slate-200 ml-4 md:ml-6">
-
-            <!-- Card 1: Apple -->
-            <div class="mb-12 ml-6 relative">
-                <span class="absolute -left-[35px] top-1 bg-emerald-600 text-white rounded-full h-8 w-8 flex items-center justify-center ring-8 ring-slate-50">
-                    <i class="fa-brands fa-apple text-sm"></i>
-                </span>
-                <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition duration-200">
-                    <div class="md:flex md:justify-between md:items-start">
-                        <div>
-                            <h3 class="text-xl font-bold text-slate-900">Senior Technical Program Manager - Worldwide Sales (B2B eCommerce & Enablement)</h3>
-                            <p class="text-blue-600 font-semibold text-md">Apple Inc.</p>
-                        </div>
-                        <span class="inline-block mt-2 md:mt-0 bg-blue-50 text-blue-700 px-3 py-1 rounded-md text-xs font-semibold tracking-wide">
-                            01/2025 - Current | Cupertino, CA
-                        </span>
-                    </div>
-                    <ul class="mt-4 space-y-2 text-slate-600 list-disc list-inside text-sm leading-relaxed">
-                        <li>Scope: 6 global engineering teams | 3 enterprise systems | $104B sales operations | 93 new product initiatives.</li>
-                        <li>Defined multi-year product vision and roadmap for global sales systems, authoring requirements documents and vision narratives that aligned engineering and executive stakeholders.</li>
-                        <li>Translated business and customer requirements into technical solutions by working closely with engineering teams, delivering scalable features spanning CRM, catalog accuracy, and order-to-cash systems.</li>
-                        <li>Led efficiency-driven system modernization across 93 new product initiatives, optimizing delta push workflows by 90% and reducing manual intervention by 60%, while maintaining a record of zero post-launch defects.</li>
-                        <li>Built an AI-driven dashboard to replace manual trackers, creating a real-time single source of truth that cut alignment overhead across business and engineering teams.</li>
-                    </ul>
+        <!-- Competency & Capabilities Matrix -->
+        <section class="grid md:grid-cols-3 gap-6">
+            <div class="bg-[#0f1424] border border-slate-800 rounded-lg p-6 shadow-md">
+                <div class="text-purple-400 text-lg mb-3"><i class="fa-solid fa-code-merge"></i></div>
+                <h4 class="font-bold text-white mb-3 font-display">System Architecture & ERP</h4>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-[11px] font-mono bg-slate-900/80 text-slate-300 border border-slate-800 px-2 py-1 rounded">SAP S/4 HANA</span>
+                    <span class="text-[11px] font-mono bg-slate-900/80 text-slate-300 border border-slate-800 px-2 py-1 rounded">SAP SD/MM/CS</span>
+                    <span class="text-[11px] font-mono bg-slate-900/80 text-slate-300 border border-slate-800 px-2 py-1 rounded">Salesforce CRM</span>
+                    <span class="text-[11px] font-mono bg-slate-900/80 text-slate-300 border border-slate-800 px-2 py-1 rounded">MS Dynamics 365</span>
+                    <span class="text-[11px] font-mono bg-slate-900/80 text-slate-300 border border-slate-800 px-2 py-1 rounded">Anaplan (Pricing Sim)</span>
                 </div>
             </div>
 
-            <!-- Card 2: Samsung (Head of OTC eCommerce) -->
-            <div class="mb-12 ml-6 relative">
-                <span class="absolute -left-[35px] top-1 bg-blue-500 text-white rounded-full h-8 w-8 flex items-center justify-center ring-8 ring-slate-50">
-                    <i class="fa-solid fa-cart-shopping text-xs"></i>
-                </span>
-                <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition duration-200">
-                    <div class="md:flex md:justify-between md:items-start">
-                        <div>
-                            <h3 class="text-xl font-bold text-slate-900">Senior Technical Product Manager - eCommerce, Head of Order to Cash (OTC)</h3>
-                            <p class="text-blue-600 font-semibold text-md">Samsung Electronics America</p>
-                        </div>
-                        <span class="inline-block mt-2 md:mt-0 bg-blue-50 text-blue-700 px-3 py-1 rounded-md text-xs font-semibold tracking-wide">
-                            05/2021 - 11/2024 | Bellevue, WA
-                        </span>
-                    </div>
-                    <ul class="mt-4 space-y-2 text-slate-600 list-disc list-inside text-sm leading-relaxed">
-                        <li>Scope: 4 global engineering teams | 3 enterprise systems | $20B sales operations.</li>
-                        <li>Partnered with solution architecture, QA, and 3PL fulfillment teams to design and scale Buy Online, Pick Up In Store (BOPIS), connecting online shoppers with 20,000 physical retail endpoints and securing $100M+ in incremental revenue.</li>
-                        <li>Designed and launched a consolidated B2B commerce platform on Samsung.com driving $42M in annual incremental revenue.</li>
-                        <li>Redesigned returns and refunds infrastructure to enhance the end-to-end customer experience, driving 32% growth in Net Promoter Score (NPS) within 6 weeks and reducing refusal rate from 14% to 10%, saving $1M annually.</li>
-                        <li>Led the SAP S/4 HANA rollout for North America eCommerce, managing data migration of 500k+ records, and built a real-time financial reconciliation dashboard preventing $10M in annual payment losses.</li>
-                    </ul>
+            <div class="bg-[#0f1424] border border-slate-800 rounded-lg p-6 shadow-md">
+                <div class="text-emerald-400 text-lg mb-3"><i class="fa-solid fa-arrows-spin"></i></div>
+                <h4 class="font-bold text-white mb-3 font-display">Lifecycle & Frameworks</h4>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-[11px] font-mono bg-slate-900/80 text-slate-300 border border-slate-800 px-2 py-1 rounded">0-to-1 Development</span>
+                    <span class="text-[11px] font-mono bg-slate-900/80 text-slate-300 border border-slate-800 px-2 py-1 rounded">Order-to-Cash (OTC)</span>
+                    <span class="text-[11px] font-mono bg-slate-900/80 text-slate-300 border border-slate-800 px-2 py-1 rounded">GTM Strategy Execution</span>
+                    <span class="text-[11px] font-mono bg-slate-900/80 text-slate-300 border border-slate-800 px-2 py-1 rounded">B2B Channel Sales</span>
+                    <span class="text-[11px] font-mono bg-slate-900/80 text-slate-300 border border-slate-800 px-2 py-1 rounded">Agile & Scrum Roadmap</span>
                 </div>
             </div>
 
-            <!-- Card 3: Samsung Mobile Strategy -->
-            <div class="mb-12 ml-6 relative">
-                <span class="absolute -left-[35px] top-1 bg-blue-500 text-white rounded-full h-8 w-8 flex items-center justify-center ring-8 ring-slate-50">
-                    <i class="fa-solid fa-mobile-screen-button text-xs"></i>
-                </span>
-                <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition duration-200">
-                    <div class="md:flex md:justify-between md:items-start">
-                        <div>
-                            <h3 class="text-xl font-bold text-slate-900">Senior Product Manager - Mobile GTM and Strategy</h3>
-                            <p class="text-blue-600 font-semibold text-md">Samsung Electronics America</p>
-                        </div>
-                        <span class="inline-block mt-2 md:mt-0 bg-blue-50 text-blue-700 px-3 py-1 rounded-md text-xs font-semibold tracking-wide">
-                            09/2019 - 05/2021 | Plano, TX
-                        </span>
-                    </div>
-                    <ul class="mt-4 space-y-2 text-slate-600 list-disc list-inside text-sm leading-relaxed">
-                        <li>Conducted in-depth sales, market, and consumer behavior analysis to provide actionable insights for strategic planning, launching limited-time offers that contributed to a 25% increase in transaction value.</li>
-                        <li>Developed a retail merchandising strategy to place 2X mobile products in 20,000 U.S. retail stores, driving an 18% increase in sales volume.</li>
-                        <li>Aligned new product launch forecasts with market demand, reducing stockout and overstock scenarios by 10%.</li>
-                    </ul>
+            <div class="bg-[#0f1424] border border-slate-800 rounded-lg p-6 shadow-md">
+                <div class="text-amber-400 text-lg mb-3"><i class="fa-solid fa-brain"></i></div>
+                <h4 class="font-bold text-white mb-3 font-display">Data Science & Intelligence</h4>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-[11px] font-mono bg-slate-900/80 text-slate-300 border border-slate-800 px-2 py-1 rounded">Responsible AI Models</span>
+                    <span class="text-[11px] font-mono bg-slate-900/80 text-slate-300 border border-slate-800 px-2 py-1 rounded">Large Language Models</span>
+                    <span class="text-[11px] font-mono bg-slate-900/80 text-slate-300 border border-slate-800 px-2 py-1 rounded">Data Workflow Optimization</span>
+                    <span class="text-[11px] font-mono bg-slate-900/80 text-slate-300 border border-slate-800 px-2 py-1 rounded">NPS Sentiment Analytics</span>
                 </div>
             </div>
+        </section>
 
-            <!-- Card 4: American Airlines -->
-            <div class="mb-12 ml-6 relative">
-                <span class="absolute -left-[35px] top-1 bg-slate-700 text-white rounded-full h-8 w-8 flex items-center justify-center ring-8 ring-slate-50">
-                    <i class="fa-solid fa-plane text-xs"></i>
-                </span>
-                <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition duration-200">
-                    <div class="md:flex md:justify-between md:items-start">
-                        <div>
-                            <h3 class="text-xl font-bold text-slate-900">Lead Product Manager Global Sales & Marketing Platforms</h3>
-                            <p class="text-blue-600 font-semibold text-md">American Airlines</p>
-                        </div>
-                        <span class="inline-block mt-2 md:mt-0 bg-blue-50 text-blue-700 px-3 py-1 rounded-md text-xs font-semibold tracking-wide">
-                            03/2016 - 09/2019 | Fort Worth, TX
-                        </span>
-                    </div>
-                    <ul class="mt-4 space-y-2 text-slate-600 list-disc list-inside text-sm leading-relaxed">
-                        <li>Scope: 2 global carriers | 1,700+ B2B users | 3 enterprise systems.</li>
-                        <li>Directed a digital ecosystem transformation, managing and mentoring a team of 3 product managers to migrate core CRM structures from Salesforce to Microsoft Dynamics 365, delivering robust APIs and scaling adoption for 1,700+ B2B power users.</li>
-                        <li>Controlled a $3.8M platform budget to architect and scale a multi-carrier contract and pricing simulation engine (Anaplan), integrating 700+ datasets across four global carriers (including JAL, BA, Iberia).</li>
-                        <li>Led the enterprise-wide GDPR compliance program for B2B systems, defining technical requirements and implementing data privacy policies across global sales, legal, and IT functions.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Card 5: Samsung (Core Enterprise Systems) -->
-            <div class="mb-6 ml-6 relative">
-                <span class="absolute -left-[35px] top-1 bg-blue-500 text-white rounded-full h-8 w-8 flex items-center justify-center ring-8 ring-slate-50">
-                    <i class="fa-solid fa-database text-xs"></i>
-                </span>
-                <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition duration-200">
-                    <div class="md:flex md:justify-between md:items-start">
-                        <div>
-                            <h3 class="text-xl font-bold text-slate-900">Product Manager - Core Enterprise Systems</h3>
-                            <p class="text-blue-600 font-semibold text-md">Samsung Electronics America</p>
-                        </div>
-                        <span class="inline-block mt-2 md:mt-0 bg-blue-50 text-blue-700 px-3 py-1 rounded-md text-xs font-semibold tracking-wide">
-                            10/2011 - 03/2016 | Richardson, TX
-                        </span>
-                    </div>
-                    <ul class="mt-4 space-y-2 text-slate-600 list-disc list-inside text-sm leading-relaxed">
-                        <li>Led systemic infrastructure unification for North America's largest corporate integration, merging three $20B supply chain and reverse-logistics frameworks under a unified SAP environment with flawless business continuity.</li>
-                        <li>Owned product strategy and implementation for Samsung's return & replacement service, improving NPS by 40% and enabling $20M in annual carrier cost savings.</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
     </main>
 
-    <!-- Education & Continuous Certifications Section -->
-    <section class="max-w-6xl mx-auto px-6 pb-20">
-        <h3 class="text-xs font-bold text-slate-400 tracking-wider uppercase mb-6">Education & Certifications</h3>
-        <div class="grid md:grid-cols-2 gap-6">
-            <!-- Academic Degree -->
-            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-start gap-4">
-                <div class="text-amber-500 text-2xl mt-1"><i class="fa-solid fa-graduation-cap"></i></div>
-                <div>
-                    <h4 class="font-bold text-slate-900">Bachelor of Science: Information Sciences and Technology, Minor in Security Risk and Analysis</h4>
-                    <p class="text-sm text-slate-600 mt-1">Pennsylvania State University, State College, PA | 2007-2010</p>
-                    <p class="text-xs text-slate-500 mt-1">GPA: 3.72/4.0 (Graduated with Distinction)</p>
-                    <p class="text-xs text-slate-400 mt-2 italic">This is where the PM journey began: combining technology, user experience design, and data architecture to solve real problems before ever holding a formal "PM" title!</p>
-                </div>
-            </div>
-            <!-- Certifications -->
-            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-start gap-4">
-                <div class="text-emerald-600 text-2xl mt-1"><i class="fa-solid fa-award"></i></div>
-                <div>
-                    <h4 class="font-bold text-slate-900">Relevant Certifications</h4>
-                    <ul class="text-xs text-slate-600 mt-2 space-y-1">
-                        <li>• Introduction to Large Language Models (LLMs) - Google (2025)</li>
-                        <li>• Introduction to Responsible AI - Google (2025)</li>
-                        <li>• Enterprise Product Management Fundamentals - Microsoft (2025)</li>
-                        <li>• Market Research and Competitive Analysis - Microsoft (2025)</li>
-                        <li>• National Training Standard for Information Systems Security (NSTISSI 4011)</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 py-12 px-6 border-t border-slate-800 text-center">
-        <div class="max-w-6xl mx-auto">
-            <p class="text-sm">© 2026 KAREN LEE</p>
-        </div>
+    <!-- Footer Console Terminal -->
+    <footer class="mt-20 border-t border-slate-900 bg-[#060810] py-8 text-center text-xs font-mono text-slate-600">
+        <p>CONSOLE_STREAM: Active connection serving on <span class="text-purple-500">https://karenleepm.github.io/intro/</span></p>
+        <p class="mt-2 text-slate-700">© 2026 Karen Lee. Built with interactive JS handlers[cite: 2].</p>
     </footer>
 
+    <!-- Interactive Javascript Telemetry Router -->
+    <script>
+        // Payload Database Map
+        const telemetryDb = {
+            psu: {
+                title: "B.S. Information Sciences and Technology",
+                company: "Penn State University[cite: 2]",
+                span: "pm_spark_cradle",
+                color: "text-amber-400",
+                bgBorder: "border-amber-500/30 bg-amber-950/20",
+                duration: "2007 - 2010[cite: 2]",
+                techStack: "Systems Analysis, Logic design, Databases, UI prototyping[cite: 2]",
+                impact: "Systemic Ignition[cite: 2]",
+                bullets: [
+                    "This is where the PM system initialized. Focused academic research into combining code architectures with practical user flows[cite: 2].",
+                    "Acquired foundations in relational databases, data structures, and operational system configurations[cite: 2].",
+                    "Graduated with Distinction, carrying a 3.72 GPA[cite: 2]."
+                ]
+            },
+            core_ent: {
+                title: "Product Manager - Core Enterprise Systems",
+                company: "Samsung Electronics America[cite: 2]",
+                span: "samsung_core_ent",
+                color: "text-blue-400",
+                bgBorder: "border-blue-500/30 bg-blue-950/20",
+                duration: "2011 - 2016[cite: 2]",
+                techStack: "SAP CS/SD/CRM, Reverse Logistics, Call Center Architecture[cite: 2]",
+                impact: "$20B ERP Unification[cite: 2]",
+                bullets: [
+                    "Led systemic infrastructure unification for North America's largest corporate integration, merging three $20B SCM frameworks under a single unified SAP environment[cite: 2].",
+                    "Owned product strategy and design for Samsung's return & replacement service engine, raising operational NPS by 40%[cite: 2].",
+                    "Delivered massive carrier efficiency updates, saving the enterprise $20M in recurring yearly service pipeline expenses[cite: 2]."
+                ]
+            },
+            aa: {
+                title: "Lead PM - Global Sales & Marketing Platforms",
+                company: "American Airlines[cite: 2]",
+                span: "aa_global_scale",
+                color: "text-slate-300",
+                bgBorder: "border-slate-500/30 bg-slate-900/50",
+                duration: "2016 - 2019[cite: 2]",
+                techStack: "Salesforce CRM, MS Dynamics 365, Anaplan (Pricing Engine)[cite: 2]",
+                impact: "$3.8M System Architecture Transformation[cite: 2]",
+                bullets: [
+                    "Directed AA's global sales environment upgrade, scaling core system capacities for 1,700+ B2B power users[cite: 2].",
+                    "Managed and controlled a $3.8M portfolio budget to design and launch an integrated pricing simulation engine (Anaplan) across four international carriers[cite: 2].",
+                    "Spearheaded enterprise compliance for B2B channels, writing legal requirements and building system features to conform to regional GDPR rules[cite: 2]."
+                ]
+            },
+            mobile: {
+                title: "Senior Product Manager - Mobile GTM & Strategy",
+                company: "Samsung Electronics America[cite: 2]",
+                span: "samsung_mobile_gtm",
+                color: "text-blue-400",
+                bgBorder: "border-blue-500/30 bg-blue-950/20",
+                duration: "2019 - 2021[cite: 2]",
+                techStack: "GTM Strategy Mobile Product Management, Supply Planning[cite: 2]",
+                impact: "18% Placement Growth[cite: 2]",
+                bullets: [
+                    "Designed and launched a retail display alignment script putting 2X more product options inside 20,000 active retail locations[cite: 2].",
+                    "Calculated forecast alignment pipelines that trimmed supply stockouts and overages down by 10% overall[cite: 2].",
+                    "Parsed transaction patterns to ship targeted promotional codes, raising average cart values by 25%[cite: 2]."
+                ]
+            },
+            ecom: {
+                title: "Senior Technical PM - eCommerce / Head of OTC",
+                company: "Samsung Electronics America[cite: 2]",
+                span: "samsung_ecom_otc",
+                color: "text-indigo-400",
+                bgBorder: "border-indigo-500/30 bg-indigo-950/20",
+                duration: "2021 - 2024[cite: 2]",
+                techStack: "North America eCommerce Strategy and Product Management, Order-to-Cash (SAP SD, MM), eCommerce[cite: 2]",
+                impact: "$100M+ BOPIS Revenue System[cite: 2]",
+                bullets: [
+                    "Engineered and launched Samsung.com's North American B2B sales portal, driving $42M in direct annual incremental commerce[cite: 2].",
+                    "Architected and deployed Buy Online Pick Up In Store (BOPIS) systems across 20,000 local supply hubs, unlocking over $100M in new cash pipelines[cite: 2].",
+                    "Coordinated the SAP S/4 HANA integration, supervising clean database transfers of over 500,000 live user profiles[cite: 2]."
+                ]
+            },
+            apple: {
+                title: "Sr. Technical Program Manager - WW Sales",
+                company: "Apple Inc.[cite: 2]",
+                span: "apple_ww_sales",
+                color: "text-emerald-400",
+                bgBorder: "border-emerald-500/30 bg-emerald-950/20",
+                duration: "2025 - Present[cite: 2]",
+                techStack: "B2B Channel Sales, B2B.com (eCommerce), Content Management (CMS), WW SAP modernization[cite: 2]",
+                impact: "90% Process Optimization[cite: 2]",
+                bullets: [
+                    "Directing technical delivery channels across 6 global development teams, overseeing $104B in operational flow[cite: 2].",
+                    "Drafted structural PM strategies across 93 new product streams, introducing clean delta updates that sliced manual process tasks by 60%[cite: 2].",
+                    "Constructed an integrated real-time tracking interface that connects disparate legal, supply, and engineering pipelines together[cite: 2]."
+                ]
+            }
+        };
+
+        // Active State router function
+        function selectTrace(key) {
+            // 1. Clear previous active class highlights on trace bars
+            document.querySelectorAll('.trace-bar').forEach(el => {
+                el.classList.remove('active-trace-node');
+                const innerBox = el.querySelector('div > div');
+                if(innerBox) {
+                    innerBox.style.boxShadow = 'none';
+                    innerBox.style.borderColor = '';
+                }
+            });
+
+            // 2. Attach visual glowing highlight wrapper to clicked node
+            const activeElement = document.getElementById(`bar-${key}`);
+            const innerNode = activeElement.querySelector('div > div');
+            if(innerNode) {
+                innerNode.style.borderColor = '#7c5cff';
+                innerNode.style.boxShadow = '0 0 15px rgba(124, 92, 255, 0.4)';
+            }
+
+            // Get selected metadata
+            const data = telemetryDb[key];
+            const headerTag = document.getElementById('active-tag');
+            const targetContainer = document.getElementById('telemetry-content');
+
+            // 3. Update top-right status tag inside panel header
+            headerTag.innerHTML = `active_span:${data.span}`;
+            headerTag.className = `text-[9px] font-mono uppercase bg-slate-900 border px-2 py-0.5 rounded border-slate-700 ${data.color}`;
+
+            // 4. Render the telemetry metrics & lists
+            let bulletsHTML = data.bullets.map(b => `<li class="flex items-start gap-2.5"><span class="${data.color} shrink-0 mt-1.5 text-[8px]">■</span><span>${b}</span></li>`).join('');
+
+            targetContainer.innerHTML = `
+                <div class="text-left space-y-4 animate-fade-in w-full">
+                    
+                    <!-- Header Segment -->
+                    <div class="p-4 rounded border ${data.bgBorder}">
+                        <span class="text-[10px] font-mono ${data.color} tracking-wider font-bold">${data.company}</span>
+                        <h4 class="text-lg font-bold text-white font-display mt-1">${data.title}</h4>
+                        <div class="flex justify-between items-center mt-3 text-[11px] font-mono text-slate-400">
+                            <span><i class="fa-solid fa-clock mr-1 text-slate-600"></i> ${data.duration}</span>
+                            <span class="${data.color}"><i class="fa-solid fa-circle-check mr-1"></i> ${data.impact}</span>
+                        </div>
+                    </div>
+
+                    <!-- Tech Spec -->
+                    <div class="bg-slate-900/60 p-3 rounded border border-slate-800/80 font-mono text-xs">
+                        <span class="text-slate-500 block text-[10px] uppercase tracking-wider mb-1">Trace Tech Dependencies:</span>
+                        <span class="text-slate-300 font-medium">${data.techStack}</span>
+                    </div>
+
+                    <!-- Operational Bullets -->
+                    <div class="space-y-3">
+                        <span class="text-slate-500 font-mono text-[10px] uppercase tracking-wider block">SPAN_LOG_OUTPUTS:</span>
+                        <ul class="text-xs text-slate-400 space-y-2.5 leading-relaxed pl-1">
+                            ${bulletsHTML}
+                        </ul>
+                    </div>
+
+                </div>
+            `;
+        }
+
+        // Auto-load first step (Apple) on first visit
+        window.addEventListener('DOMContentLoaded', () => {
+            selectTrace('apple');
+        });
+    </script>
 </body>
 </html>
