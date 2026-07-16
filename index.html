@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karen Lee's Career Journey</title>
+    <title>karen_lee_career_stream</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
@@ -22,6 +22,7 @@
         .font-mono {
             font-family: 'JetBrains Mono', monospace;
         }
+        /* Custom scrollbar to match datadog style */
         ::-webkit-scrollbar {
             width: 6px;
             height: 6px;
@@ -100,7 +101,7 @@
             <div class="flex flex-wrap items-center gap-2 mt-6 pt-6 border-t border-slate-800/80 font-mono text-xs">
                 <span class="text-slate-500 font-bold uppercase tracking-wider mr-2">Interactive Mode:</span>
                 <span class="text-emerald-400 bg-emerald-950/40 px-2 py-0.5 rounded border border-emerald-800/50 flex items-center gap-1.5">
-                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-ping"></span> Click any span below to filter telemetry details
+                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-ping"></span> Click any milestone bubble below to filter telemetry details
                 </span>
             </div>
         </section>
@@ -152,101 +153,99 @@
             </div>
         </section>
 
-        <!-- Dynamic Split Panel: Visual Map Left, Interactive Detail Panel Right -->
-        <div class="grid lg:grid-cols-12 gap-6 items-start">
+        <!-- Dynamic Timeline & Detail Grid -->
+        <div class="grid grid-cols-1 gap-6">
             
-            <!-- LEFT PANEL: The Interactive Visual Career Roadmap (7 Cols) -->
-            <section class="lg:col-span-7 bg-[#0f1424] border border-slate-800 rounded-lg shadow-xl overflow-hidden">
-                <div class="p-4 border-b border-slate-800 bg-[#0d1222] flex justify-between items-center">
+            <!-- Horizontal Icon-Based Timeline Segment -->
+            <section class="bg-[#0f1424] border border-slate-800 rounded-lg shadow-xl overflow-hidden p-6 relative">
+                <div class="mb-8 border-b border-slate-800/80 pb-4 flex justify-between items-center">
                     <h3 class="text-xs font-mono font-bold tracking-wider uppercase text-slate-400">
-                        <i class="fa-solid fa-chart-column text-purple-500 mr-2"></i>APM_TRACE_MAP
+                        <i class="fa-solid fa-route text-purple-500 mr-2"></i>APM_TRACE_MAP
                     </h3>
-                    <span class="text-[10px] text-purple-400 font-mono"><i class="fa-solid fa-mouse-pointer mr-1 animate-bounce"></i>CLICK FOR LOGS</span>
+                    <span class="text-[10px] text-purple-400 font-mono"><i class="fa-solid fa-mouse-pointer mr-1 animate-bounce"></i>SELECT A NODE FOR DETAILED TELEMETRY</span>
                 </div>
 
-                <div class="p-6 space-y-6">
-                    <!-- Timeline Rules -->
-                    <div class="flex text-[10px] font-mono text-slate-600 border-b border-slate-800/60 pb-2 mb-2">
-                        <div class="w-[10%]">2007 (PSU)</div>
-                        <div class="w-[25%] pl-4">2011 (Core ERP)</div>
-                        <div class="w-[20%]">2016 (AA)</div>
-                        <div class="w-[15%]">2019 (Mobile)</div>
-                        <div class="w-[20%]">2021 (eCommerce)</div>
-                        <div class="w-[10%] text-right">Present</div>
-                    </div>
+                <!-- Timeline Container -->
+                <div class="relative w-full overflow-x-auto pb-4">
+                    <!-- Connecting Vector Line -->
+                    <div class="absolute top-[38px] left-[8%] right-[8%] h-[2px] bg-slate-800 z-0 hidden lg:block"></div>
 
-                    <!-- Interactive Bars -->
-                    <!-- Node 1: PSU -->
-                    <div onclick="selectTrace('psu')" id="bar-psu" class="trace-bar group flex items-center gap-4 cursor-pointer">
-                        <div class="w-1/4 font-mono text-xs text-slate-400 truncate">pm_spark_cradle</div>
-                        <div class="w-3/4">
-                            <div class="w-[25%] h-8 bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/50 rounded flex items-center justify-between px-3 transition-all duration-150 relative">
-                                <span class="text-[10px] font-mono font-bold text-amber-300 truncate">Penn State PM Cradle</span>
-                                <i class="fa-solid fa-chevron-right text-[8px] text-amber-400"></i>
+                    <!-- Horizontal Grid Alignment -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8 relative z-10 min-w-[760px] lg:min-w-0">
+                        
+                        <!-- Node 1: PM Spark -->
+                        <div onclick="selectTrace('psu')" id="node-psu" class="group flex flex-col items-center text-center cursor-pointer transition-all duration-200">
+                            <!-- Circular Icon Wrapper -->
+                            <div class="w-16 h-16 rounded-full flex items-center justify-center bg-[#1d1b1c] border-2 border-amber-500/40 hover:border-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.05)] hover:shadow-[0_0_15px_rgba(245,158,11,0.3)] transition-all duration-200 mb-4 z-10">
+                                <i class="fa-solid fa-lightbulb text-amber-500 text-xl group-hover:scale-110 transition-transform"></i>
                             </div>
+                            <h4 class="font-bold text-white text-sm tracking-tight font-display">PM Spark</h4>
+                            <p class="text-[11px] text-slate-400 mt-0.5">Penn State Univ.</p>
+                            <span class="mt-2 text-[10px] font-mono font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2 py-0.5 rounded-full">2007 - 2010</span>
+                            <p class="text-[11px] text-slate-500 mt-3 leading-relaxed px-2 line-clamp-3">Designing system architectures & securing systems early on</p>
                         </div>
-                    </div>
 
-                    <!-- Node 2: Core Enterprise -->
-                    <div onclick="selectTrace('core_ent')" id="bar-core_ent" class="trace-bar group flex items-center gap-4 cursor-pointer">
-                        <div class="w-1/4 font-mono text-xs text-slate-400 truncate">samsung_core_ent</div>
-                        <div class="w-3/4">
-                            <div class="ml-[25%] w-[35%] h-8 bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/50 rounded flex items-center justify-between px-3 transition-all duration-150 relative">
-                                <span class="text-[10px] font-mono font-bold text-blue-300 truncate">Core Enterprise ERP</span>
-                                <i class="fa-solid fa-chevron-right text-[8px] text-blue-400"></i>
+                        <!-- Node 2: Core Enterprise -->
+                        <div onclick="selectTrace('core_ent')" id="node-core_ent" class="group flex flex-col items-center text-center cursor-pointer transition-all duration-200">
+                            <div class="w-16 h-16 rounded-full flex items-center justify-center bg-[#171b2f] border-2 border-blue-500/40 hover:border-blue-400 shadow-[0_0_15px_rgba(59,130,246,0.05)] hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all duration-200 mb-4 z-10">
+                                <i class="fa-solid fa-database text-blue-400 text-xl group-hover:scale-110 transition-transform"></i>
                             </div>
+                            <h4 class="font-bold text-white text-sm tracking-tight font-display">Core Enterprise</h4>
+                            <p class="text-[11px] text-slate-400 mt-0.5">Samsung SEA</p>
+                            <span class="mt-2 text-[10px] font-mono font-bold bg-blue-500/10 text-blue-400 border border-blue-500/20 px-2 py-0.5 rounded-full">2011 - 2016</span>
+                            <p class="text-[11px] text-slate-500 mt-3 leading-relaxed px-2 line-clamp-3">SAP CS/SD/CRM, Reverse Logistics, Call Center</p>
                         </div>
-                    </div>
 
-                    <!-- Node 3: American Airlines -->
-                    <div onclick="selectTrace('aa')" id="bar-aa" class="trace-bar group flex items-center gap-4 cursor-pointer">
-                        <div class="w-1/4 font-mono text-xs text-slate-400 truncate">aa_global_scale</div>
-                        <div class="w-3/4">
-                            <div class="ml-[60%] w-[20%] h-8 bg-slate-600/30 hover:bg-slate-600/40 border border-slate-500/50 rounded flex items-center justify-between px-3 transition-all duration-150 relative">
-                                <span class="text-[10px] font-mono font-bold text-slate-200 truncate">AA Sales CRM Strategy</span>
-                                <i class="fa-solid fa-chevron-right text-[8px] text-slate-300"></i>
+                        <!-- Node 3: Global Scale -->
+                        <div onclick="selectTrace('aa')" id="node-aa" class="group flex flex-col items-center text-center cursor-pointer transition-all duration-200">
+                            <div class="w-16 h-16 rounded-full flex items-center justify-center bg-[#181d2a] border-2 border-slate-500/40 hover:border-slate-300 shadow-[0_0_15px_rgba(148,163,184,0.05)] hover:shadow-[0_0_15px_rgba(148,163,184,0.3)] transition-all duration-200 mb-4 z-10">
+                                <i class="fa-solid fa-plane text-slate-300 text-xl group-hover:scale-110 transition-transform"></i>
                             </div>
+                            <h4 class="font-bold text-white text-sm tracking-tight font-display">Global Scale</h4>
+                            <p class="text-[11px] text-slate-400 mt-0.5">American Airlines</p>
+                            <span class="mt-2 text-[10px] font-mono font-bold bg-slate-500/10 text-slate-300 border border-slate-500/20 px-2 py-0.5 rounded-full">2016 - 2019</span>
+                            <p class="text-[11px] text-slate-500 mt-3 leading-relaxed px-2 line-clamp-3">B2B Sales and Marketing, CRM strategy, Pricing Simulation</p>
                         </div>
-                    </div>
 
-                    <!-- Node 4: Samsung Mobile GTM -->
-                    <div onclick="selectTrace('mobile')" id="bar-mobile" class="trace-bar group flex items-center gap-4 cursor-pointer">
-                        <div class="w-1/4 font-mono text-xs text-slate-400 truncate">samsung_mobile_gtm</div>
-                        <div class="w-3/4">
-                            <div class="ml-[80%] w-[12%] h-8 bg-blue-500/30 hover:bg-blue-500/40 border border-blue-400/50 rounded flex items-center justify-between px-2 transition-all duration-150 relative">
-                                <span class="text-[10px] font-mono font-bold text-blue-300 truncate">Mobile GTM</span>
-                                <i class="fa-solid fa-chevron-right text-[8px] text-blue-400"></i>
+                        <!-- Node 4: Mobile GTM -->
+                        <div onclick="selectTrace('mobile')" id="node-mobile" class="group flex flex-col items-center text-center cursor-pointer transition-all duration-200">
+                            <div class="w-16 h-16 rounded-full flex items-center justify-center bg-[#171b2f] border-2 border-blue-400/40 hover:border-blue-300 shadow-[0_0_15px_rgba(96,165,250,0.05)] hover:shadow-[0_0_15px_rgba(96,165,250,0.3)] transition-all duration-200 mb-4 z-10">
+                                <i class="fa-solid fa-mobile-screen-button text-blue-400 text-xl group-hover:scale-110 transition-transform"></i>
                             </div>
+                            <h4 class="font-bold text-white text-sm tracking-tight font-display">Mobile GTM</h4>
+                            <p class="text-[11px] text-slate-400 mt-0.5">Samsung SEA</p>
+                            <span class="mt-2 text-[10px] font-mono font-bold bg-blue-400/10 text-blue-400 border border-blue-400/20 px-2 py-0.5 rounded-full">2019 - 2021</span>
+                            <p class="text-[11px] text-slate-500 mt-3 leading-relaxed px-2 line-clamp-3">GTM strategy mobile product management</p>
                         </div>
-                    </div>
 
-                    <!-- Node 5: Samsung eCommerce -->
-                    <div onclick="selectTrace('ecom')" id="bar-ecom" class="trace-bar group flex items-center gap-4 cursor-pointer">
-                        <div class="w-1/4 font-mono text-xs text-slate-400 truncate">samsung_ecom_otc</div>
-                        <div class="w-3/4">
-                            <div class="ml-[85%] w-[12%] h-8 bg-indigo-600/20 hover:bg-indigo-600/30 border border-indigo-500/50 rounded flex items-center justify-between px-2 transition-all duration-150 relative">
-                                <span class="text-[10px] font-mono font-bold text-indigo-300 truncate">eCom OTC</span>
-                                <i class="fa-solid fa-chevron-right text-[8px] text-indigo-400"></i>
+                        <!-- Node 5: eCommerce OTC -->
+                        <div onclick="selectTrace('ecom')" id="node-ecom" class="group flex flex-col items-center text-center cursor-pointer transition-all duration-200">
+                            <div class="w-16 h-16 rounded-full flex items-center justify-center bg-[#1a1936] border-2 border-indigo-500/40 hover:border-indigo-400 shadow-[0_0_15px_rgba(99,102,241,0.05)] hover:shadow-[0_0_15px_rgba(99,102,241,0.3)] transition-all duration-200 mb-4 z-10">
+                                <i class="fa-solid fa-cart-shopping text-indigo-400 text-xl group-hover:scale-110 transition-transform"></i>
                             </div>
+                            <h4 class="font-bold text-white text-sm tracking-tight font-display">eCommerce OTC</h4>
+                            <p class="text-[11px] text-slate-400 mt-0.5">Samsung SEA</p>
+                            <span class="mt-2 text-[10px] font-mono font-bold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-2 py-0.5 rounded-full">2021 - 2024</span>
+                            <p class="text-[11px] text-slate-500 mt-3 leading-relaxed px-2 line-clamp-3">North America eCommerce Strategy, Order-to-Cash, eCommerce</p>
                         </div>
-                    </div>
 
-                    <!-- Node 6: Apple -->
-                    <div onclick="selectTrace('apple')" id="bar-apple" class="trace-bar group flex items-center gap-4 cursor-pointer">
-                        <div class="w-1/4 font-mono text-xs text-slate-400 truncate">apple_ww_sales</div>
-                        <div class="w-3/4">
-                            <div class="ml-[93%] w-[7%] h-8 bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/50 rounded flex items-center justify-between px-2 transition-all duration-150 relative">
-                                <span class="text-[10px] font-mono font-bold text-emerald-300 truncate">Apple</span>
-                                <i class="fa-solid fa-chevron-right text-[8px] text-emerald-400"></i>
+                        <!-- Node 6: Worldwide Sales -->
+                        <div onclick="selectTrace('apple')" id="node-apple" class="group flex flex-col items-center text-center cursor-pointer transition-all duration-200">
+                            <div class="w-16 h-16 rounded-full flex items-center justify-center bg-[#151f23] border-2 border-emerald-500/40 hover:border-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.05)] hover:shadow-[0_0_15px_rgba(16,185,129,0.3)] transition-all duration-200 mb-4 z-10">
+                                <i class="fa-brands fa-apple text-emerald-400 text-2xl group-hover:scale-110 transition-transform"></i>
                             </div>
+                            <h4 class="font-bold text-white text-sm tracking-tight font-display">Worldwide Sales</h4>
+                            <p class="text-[11px] text-slate-400 mt-0.5">Apple Inc.</p>
+                            <span class="mt-2 text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded-full">2025 - Present</span>
+                            <p class="text-[11px] text-slate-500 mt-3 leading-relaxed px-2 line-clamp-3">B2B Channel Sales, B2B.com, Content Management, WW SAP modernization</p>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
             </section>
 
-            <!-- RIGHT PANEL: Dynamic Span Telemetry (Details Panel) (5 Cols) -->
-            <section class="lg:col-span-5 bg-[#0f1424] border border-slate-800 rounded-lg shadow-xl overflow-hidden min-h-[420px] flex flex-col">
+            <!-- Detailed Telemetry Display Panel (Full Width for Better Reading and Alignment) -->
+            <section class="bg-[#0f1424] border border-slate-800 rounded-lg shadow-xl overflow-hidden flex flex-col">
                 <div class="p-4 border-b border-slate-800 bg-[#0d1222] flex justify-between items-center">
                     <h3 class="text-xs font-mono font-bold tracking-wider uppercase text-slate-400">
                         <i class="fa-solid fa-terminal text-emerald-400 mr-2"></i>SPAN_METADATA_METRICS
@@ -255,10 +254,10 @@
                 </div>
 
                 <!-- Live Container injected dynamically via JS -->
-                <div id="telemetry-content" class="p-5 flex-1 flex flex-col justify-center text-center text-slate-500 space-y-3">
-                    <i class="fa-solid fa-diagram-project text-3xl text-slate-700 animate-pulse"></i>
+                <div id="telemetry-content" class="p-6 flex-1 flex flex-col justify-center items-center text-center text-slate-500 min-h-[220px]">
+                    <i class="fa-solid fa-diagram-project text-4xl text-slate-700 animate-pulse mb-3"></i>
                     <p class="font-mono text-xs">Waiting for trace execution target...</p>
-                    <p class="text-xs max-w-xs mx-auto">Select any trace bar from the graph interface on the left to pull live metadata logs and performance metrics.</p>
+                    <p class="text-xs max-w-md mt-1">Select any milestone node from the interactive timeline above to inspect real-time performance indicators and operation logs.</p>
                 </div>
             </section>
         </div>
@@ -370,7 +369,7 @@
                 bullets: [
                     "Designed and launched a retail display alignment script putting 2X more product options inside 20,000 active retail locations.",
                     "Calculated forecast alignment pipelines that trimmed supply stockouts and overages down by 10% overall.",
-                    "Parsed transaction patterns to ship targeted promotional codes, raising average cart values by 25%."
+                    "Parsed transaction patterns to ship targeted promotional codes, raising average cart values by 25."
                 ]
             },
             ecom: {
@@ -407,21 +406,34 @@
 
         // Active State router function
         function selectTrace(key) {
-            // 1. Clear previous active class highlights on trace bars
-            document.querySelectorAll('.trace-bar').forEach(el => {
-                const innerBox = el.querySelector('div > div');
-                if(innerBox) {
-                    innerBox.style.boxShadow = 'none';
-                    innerBox.style.borderColor = '';
+            // 1. Clear previous active class highlights on timeline nodes
+            document.querySelectorAll('[id^="node-"]').forEach(el => {
+                const innerCircle = el.querySelector('div');
+                if(innerCircle) {
+                    innerCircle.style.borderColor = '';
+                    innerCircle.style.boxShadow = 'none';
+                    innerCircle.classList.remove('scale-105');
                 }
             });
 
             // 2. Attach visual glowing highlight wrapper to clicked node
-            const activeElement = document.getElementById(`bar-${key}`);
-            const innerNode = activeElement.querySelector('div > div');
-            if(innerNode) {
-                innerNode.style.borderColor = '#7c5cff';
-                innerNode.style.boxShadow = '0 0 15px rgba(124, 92, 255, 0.4)';
+            const activeElement = document.getElementById(`node-${key}`);
+            if (activeElement) {
+                const innerCircle = activeElement.querySelector('div');
+                if(innerCircle) {
+                    const data = telemetryDb[key];
+                    let glowColor = 'rgba(16, 185, 129, 0.4)'; // Default emerald glow
+                    let borderColor = '#10b981';
+
+                    if (key === 'psu') { glowColor = 'rgba(245, 158, 11, 0.4)'; borderColor = '#f59e0b'; }
+                    else if (key === 'core_ent' || key === 'mobile') { glowColor = 'rgba(59, 130, 246, 0.4)'; borderColor = '#3b82f6'; }
+                    else if (key === 'aa') { glowColor = 'rgba(148, 163, 184, 0.4)'; borderColor = '#94a3b8'; }
+                    else if (key === 'ecom') { glowColor = 'rgba(99, 102, 241, 0.4)'; borderColor = '#6366f1'; }
+
+                    innerCircle.style.borderColor = borderColor;
+                    innerCircle.style.boxShadow = `0 0 20px ${glowColor}`;
+                    innerCircle.classList.add('scale-105');
+                }
             }
 
             // Get selected metadata
@@ -433,11 +445,11 @@
             headerTag.innerHTML = `active_span:${data.span}`;
             headerTag.className = `text-[9px] font-mono uppercase bg-slate-900 border px-2 py-0.5 rounded border-slate-700 ${data.color}`;
 
-            // 4. Render the telemetry metrics & lists
-            let bulletsHTML = data.bullets.map(b => `<li class="flex items-start gap-2.5"><span class="${data.color} shrink-0 mt-1.5 text-[8px]">■</span><span>${b}</span></li>`).join('');
+            // 4. Render the telemetry metrics & lists in a beautifully aligned layout
+            let bulletsHTML = data.bullets.map(b => `<li class="flex items-start gap-2.5 text-left"><span class="${data.color} shrink-0 mt-1.5 text-[8px]">■</span><span>${b}</span></li>`).join('');
 
             targetContainer.innerHTML = `
-                <div class="text-left space-y-4 w-full">
+                <div class="text-left space-y-5 w-full">
                     
                     <!-- Header Segment -->
                     <div class="p-4 rounded border ${data.bgBorder}">
@@ -449,18 +461,26 @@
                         </div>
                     </div>
 
-                    <!-- Tech Spec -->
-                    <div class="bg-slate-900/60 p-3 rounded border border-slate-800/80 font-mono text-xs">
-                        <span class="text-slate-500 block text-[10px] uppercase tracking-wider mb-1">Trace Tech Dependencies:</span>
-                        <span class="text-slate-300 font-medium">${data.techStack}</span>
-                    </div>
+                    <!-- Details Grid to Keep things Aligned and Readable -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Left Side: Tech Specs -->
+                        <div class="bg-slate-900/60 p-4 rounded border border-slate-800/80 font-mono text-xs flex flex-col justify-between">
+                            <div>
+                                <span class="text-slate-500 block text-[10px] uppercase tracking-wider mb-2">Trace Tech Dependencies:</span>
+                                <span class="text-slate-200 font-medium leading-relaxed">${data.techStack}</span>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-slate-800/80 text-slate-500 text-[10px]">
+                                STATUS: operational_stable_node
+                            </div>
+                        </div>
 
-                    <!-- Operational Bullets -->
-                    <div class="space-y-3">
-                        <span class="text-slate-500 font-mono text-[10px] uppercase tracking-wider block">SPAN_LOG_OUTPUTS:</span>
-                        <ul class="text-xs text-slate-400 space-y-2.5 leading-relaxed pl-1">
-                            ${bulletsHTML}
-                        </ul>
+                        <!-- Right Side: Actionable logs/achievements -->
+                        <div class="space-y-3">
+                            <span class="text-slate-500 font-mono text-[10px] uppercase tracking-wider block">SPAN_LOG_OUTPUTS:</span>
+                            <ul class="text-xs text-slate-400 space-y-3 leading-relaxed pl-1">
+                                ${bulletsHTML}
+                            </ul>
+                        </div>
                     </div>
 
                 </div>
